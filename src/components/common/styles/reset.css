@@ -62,7 +62,7 @@ label{
     padding: 10px;
     border: 2px solid var(--gray);
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 input:focus {
@@ -73,7 +73,6 @@ input:focus {
 .reset .submit{
     width: 100%;
     text-align: center;
-    margin: 30px 0 0 0 ;
 }
 
 .reset button{
