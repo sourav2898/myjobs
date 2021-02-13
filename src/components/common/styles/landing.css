@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primaryLight: #43AFFF;
+    --primaryDark: #303F60;
+    --secondaryLight: #EDF6FF;
+    --secondaryDark:#D9EFFF;
+    --gray: #A9AFBC;
+    --font: Helvetica Neue;
+}
+
+.intro{
+    background: var(--primaryDark);
+    width:100%;
+    height: 464px;
+    padding: 20px;
+}
+
+.intro .info{
+    width: 80%;
+    margin: 100px auto 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.intro .info .greet{
+    width: 334px;
+}
+
+.intro .info .greet p{
+    color: var(--secondaryLight);
+    font: normal bold 60px var(--font);
+    margin-bottom: 40px;
+}
+
+.intro .info .greet p span{
+    color: var(--primaryLight);
+}
+
+.intro .info .greet .action{
+    background: var(--primaryLight);
+    border: 1px solid var(--primaryLight);
+    border-radius: 5px;
+    padding: 10px 15px;
+    color: var(--secondaryLight);
+    text-decoration: none;
+    font: normal bold 16px/19px var(--font);
+}
+
+.intro .info .image{
+    border: 1px solid #333;
+}
+
+.about {
+    background: var(--secondaryDark);
+    width: 100%;
+    height: 100%;
+}
+
+.about .goal ,.about .partners{
+    width: 80%;
+    margin: 0 auto;
+    padding: 100px 0 0 0; 
+}
+
+.about .goal .heading, .about .partners .header{
+    font: normal bold 22px/27px var(--font);
+    color: var(--primaryDark);
+    margin-bottom: 20px;
+}
+
+.goal .achieve, .about .partners .companies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.goal .achieve .content{
+    padding: 20px;
+    background: #fff;
+    width: 301px;
+    height: 152px;
+    overflow: hidden;
+    box-shadow: 0px 3px 6px #557DA526;
+    border-radius: 5px;
+}
+
+.goal .achieve .content .tittle{
+    width: 40%;
+    word-break: keep-all;
+    font: normal bold  14px/20px Helvetica Neue;
+    color: var(--primaryLight);
+    margin-bottom: 10px;
+}
+
+.goal .achieve .desc{
+    font: normal normal 14px/20px Helvetica Neue;
+    color: var(--primaryDark);
+}
+
+.about .partners .companies{
+    justify-content: space-around;
+}

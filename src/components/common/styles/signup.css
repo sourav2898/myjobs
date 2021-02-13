@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primaryLight: #43AFFF;
+    --primaryDark: #303F60;
+    --secondaryLight: #EDF6FF;
+    --secondaryDark:#D9EFFF;
+    --gray: #A9AFBC;
+    --font: Helvetica Neue;
+}
+
+body{
+    background: var(--secondaryDark);
+    width: 100%;
+    height: 100%;
+}
+
+.ceil{
+    background: var(--primaryDark);
+    width:100%;
+    height: 300px;
+}
+
+.signup{
+    position: absolute;
+    width: 557px;
+    background: #fff;
+    border: 1px sloid #fff;
+    border-radius: 10px;     
+    padding: 30px;
+    right: 0;
+    left: 0;
+    top: 10%;
+    margin: auto;
+}
+
+.signup .header{
+    font: normal bold 22px/27px Helvetica Neue;
+    color: var(--primaryDark);
+    margin-bottom: 20px;
+}
+
+.signup .inputs{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.signup .category {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.selector .opts{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+    border: 2px solid var(--gray);
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.opts:active, .opts:hover{
+    background: var(--primaryLight);
+    color: var(--secondaryLight);
+    border: 2px solid var(--primaryLight);
+}
+
+.selector .opts p{
+    font: normal normal normal 14px/16px Helvetica Neue;
+}
+
+label{
+    font: normal bold 14px/16px Helvetica Neue;
+    color: var(--primaryDark);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom:5px;
+}
+
+input{
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--gray);
+    border-radius: 5px;
+}
+
+input:focus {
+    outline: var(--primaryLight) !important;
+    border: 2px solid var(--primaryLight);
+}
+
+.signup .password{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.password .inputs{
+    width: 48%;
+}
+
+.signup .submit{
+    width: 100%;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.signup button{
+    padding: 10px 30px;
+    border: 2px solid var(--primaryLight);
+    border-radius: 5px;
+    background: var(--primaryLight);
+    color: var(--secondaryLight);
+    font: normal bold 16px var(--font);
+    outline: none;
+    cursor: pointer;
+}
+
+.signup .new_account {
+    font: normal normal normal 16px/19px Helvetica Neue;
+    color: var(--primaryDark);
+    width: 100%;
+    text-align: center;
+}
+
+.signup .new_account p a{
+    color: var(--primaryLight);
+    text-decoration: none;
+}
