@@ -25,7 +25,12 @@ const Home = () => {
             console.log(error);
         }
     }
-
+    window.onload = function() {
+        if(!window.location.hash) {
+            window.location = window.location + '#loaded';
+            window.location.reload();
+        }
+    }
     useEffect(() => {
         // console.log(localStorage);
         if(localStorage.length>0){
@@ -36,6 +41,8 @@ const Home = () => {
         else{
             history.push(`/`);
         }
+        // alert("please refresh");
+        window.onload();
         // console.log(jobs);
     }, [])
 

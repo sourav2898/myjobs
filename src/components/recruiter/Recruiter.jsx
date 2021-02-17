@@ -9,6 +9,7 @@ const Recruiter = () => {
     const [postedJobs, setPostedJobs] = useState({});
     const ls = JSON.parse(localStorage.getItem('data'));
     let history = useHistory();
+    var referes = 1;
 
     async function getPostedJobs(){
         try{
@@ -25,8 +26,16 @@ const Recruiter = () => {
         }
     }
 
+    window.onload = function() {
+        if(!window.location.hash) {
+            window.location = window.location + '#loaded';
+            window.location.reload();
+        }
+    }
+
     useEffect(() => {
         getPostedJobs();
+        window.onload();
     },[])
 
     return (
