@@ -1,7 +1,10 @@
 import React from 'react'
 import './styles/forgot.css';
 import {useFormik} from 'formik';
-import * as Yup from 'yup';
+import Axios from 'axios';
+import {baseUrl} from '../../conf';
+import * as Yup from "yup";
+import { useHistory } from "react-router-dom";
 
 const validate = Yup.object().shape({
     email: Yup.string()
@@ -11,7 +14,7 @@ const validate = Yup.object().shape({
 
 
 const ForgotPassword = () => {
-
+    let history = useHistory();
     const {
         handleSubmit,
         handleChange,
@@ -19,13 +22,25 @@ const ForgotPassword = () => {
         values
       } = useFormik({
         initialValues: {
-            email: "",
+            email: ""
         },
         validateOnBlur: true,
         validateOnChange: true,
         validationSchema: validate,
-        onSubmit: () => {
-            alert(values);
+        onSubmit: async () => {
+            try{
+                const res = await Axios.get(`${baseUrl}/auth/resetpassword`,values,
+                {
+                    headers: { 
+                        'Content-Type' : 'application/json' 
+                    }
+                });
+                alert(res);
+                history.push('/reset-password');
+            }
+            catch (error) {
+                alert(error);
+            }   
         } 
     })
 

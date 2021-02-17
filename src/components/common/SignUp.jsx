@@ -38,26 +38,31 @@ const SignUp = () => {
             name: "",
             confirmPassword: "",
             skills:"",
-            userRole: userRole,
+            userRole: 0
         },
         validateOnBlur: true,
         validateOnChange: true,
         validationSchema: signUpValidation,
         onSubmit: async () => {
             try{
-                let res = await Axios.post(`${baseUrl}/auth/register`,
-                        values,
-                        {
-                            headers: { 
-                                'Content-Type' : 'application/json' 
-                            }
-                        });
-                alert(res);
+                const res = await Axios.post(`${baseUrl}/auth/register`,values,
+                {
+                    headers: { 
+                        'Content-Type' : 'application/json' 
+                    }
+                });
+                if(userRole===0){
+                    alert("you successfully signed up as a recruiter");
+                }
+                else{
+                    alert("you successfully signed up as a candidate");
+                }
                 history.push('/login');
             }
             catch (error) {
                 alert(error);
             }   
+            // console.log(values);
         } 
     })
 
@@ -71,25 +76,25 @@ const SignUp = () => {
                         <label>I'm a*</label>
                         <div className="category">
                         {
-                            userRole === 1 
+                            userRole === 0
                             ? 
-                            <a className='opts' style={{background:"#43AFFF",border:"1px solid #43AFFF"}} onClick={() => setUserRole(1)}>
+                            <a className='opts' style={{background:"#43AFFF",border:"1px solid #43AFFF"}} onClick={() => {setUserRole(0);values.userRole=0}}>
                                 Recruiter
                             </a>
                             :
-                            <a className='opts' onClick={() => setUserRole(1)}>
+                            <a className='opts' onClick={() => {setUserRole(0);values.userRole=0}}>
                                 Recruiter
                             </a>
                         }
                             
                         {
-                            userRole === 0
+                            userRole === 1
                             ?
-                            <a className="opts" style={{background:"#43AFFF",border:"1px solid #43AFFF"}} onClick={() => setUserRole(0)}>
+                            <a className="opts" style={{background:"#43AFFF",border:"1px solid #43AFFF"}} onClick={() => {setUserRole(1);values.userRole=1}}>
                                 Candidate
                             </a>   
                             :
-                            <a className="opts" onClick={() => setUserRole(0)}>
+                            <a className="opts" onClick={() => {setUserRole(1);values.userRole=1}}>
                                 Candidate
                             </a>
                         }

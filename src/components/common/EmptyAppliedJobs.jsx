@@ -15,7 +15,7 @@ const EmptyAppliedJobs = () => {
         <div className="empty_applied">
             <NoteIcon style={{width:"106px", height:"106px",color:"#A9AFBC"}}/>
             <p className="ins">Your applied jobs will show here!</p>
-            <button class="all_jobs" onClick={alljobs}>
+            <button className="all_jobs" onClick={alljobs}>
                 See All Jobs
             </button>
         </div>
