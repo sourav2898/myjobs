@@ -1,6 +1,14 @@
 import React from 'react'
 import './styles/forgot.css';
 import {useFormik} from 'formik';
+import * as Yup from 'yup';
+
+const validate = Yup.object().shape({
+    email: Yup.string()
+      .email("Invalid email")
+      .required("Email is required"),
+});
+
 
 const ForgotPassword = () => {
 
@@ -8,9 +16,6 @@ const ForgotPassword = () => {
         handleSubmit,
         handleChange,
         errors,
-        touched,
-        setFieldTouched,
-        dirty,
         values
       } = useFormik({
         initialValues: {
@@ -18,8 +23,9 @@ const ForgotPassword = () => {
         },
         validateOnBlur: true,
         validateOnChange: true,
+        validationSchema: validate,
         onSubmit: () => {
-            console.log(values);
+            alert(values);
         } 
     })
 
@@ -44,6 +50,7 @@ const ForgotPassword = () => {
                         placeholder="Enter your email"
                         required
                     />
+                    {errors && <p className="error">{errors.email}</p>}
                 </div>
                 <div className="submit">
                     <button

@@ -36,7 +36,7 @@ const ResetPassword = () => {
                             New Password
                         </label>
                         <input 
-                            type="text"
+                            type="password"
                             name="new"
                             id="new"
                             value={values.new}
@@ -50,7 +50,7 @@ const ResetPassword = () => {
                             Confirm New Password
                         </label>
                         <input 
-                            type="text"
+                            type="password"
                             name="confirm"
                             id="confirm"
                             value={values.confirm}

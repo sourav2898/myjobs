@@ -66,15 +66,6 @@ body{
     margin-right: 10px;
     cursor: pointer;
     text-decoration: none;
-}
-
-.opts:active, .opts:hover{
-    background: var(--primaryLight);
-    color: var(--secondaryLight);
-    border: 2px solid var(--primaryLight);
-}
-
-.selector .opts p{
     font: normal normal normal 14px/16px Helvetica Neue;
 }
 
@@ -136,4 +127,10 @@ input:focus {
 .signup .new_account p a{
     color: var(--primaryLight);
     text-decoration: none;
+}
+
+.error{
+    color: crimson;
+    font: normal medium 16px/19px Helvetica Neue;
+    text-align: right;
 }

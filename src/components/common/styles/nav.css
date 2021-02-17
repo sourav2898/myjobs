@@ -21,6 +21,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
     padding: 10px 0;
     position: fixed;
     top: 0;
@@ -31,6 +32,7 @@
 .navbar .brand{
     font: normal bold 22px var(--font);
     color: var(--primaryLight);     
+    text-decoration: none;
 }
 
 .navbar .brand span{
@@ -38,11 +40,62 @@
 }
 
 .navbar .login{
-    padding: 10px;
+    padding: 10px 15px; 
     border: 2px solid var(--primaryLight);
     border-radius: 10px;
     background: var(--primaryDark);
     color: var(--secondaryLight);
     font: normal bold 16px var(--font);
     text-decoration: none;
+}
+
+
+.navbar .candidate{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar .candidate .apply{
+    font: normal normal normal 16px/18px Helvetica Neue;
+    color: var(--secondaryLight);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.navtar .candidate .apply:active{
+    border-bottom: 2px solid var(--primaryLight);
+}
+
+.candidate .avatar{
+    background: var(--secondaryLight);
+    margin: 0 5px 0 15px;
+    color: var(--primaryDark);
+}
+
+.candidate .dropdown{
+    color: var(--secondaryLight);
+    cursor: pointer;
+}
+
+.candidate .dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: var(--secondaryLight);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.candidate .drop:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a{
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--primaryDark);
 }

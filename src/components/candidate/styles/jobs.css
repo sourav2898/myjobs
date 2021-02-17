@@ -1,0 +1,26 @@
+:root {
+    --primaryLight: #43AFFF;
+    --primaryDark: #303F60;
+    --secondaryLight: #EDF6FF;
+    --secondaryDark:#D9EFFF;
+    --gray: #A9AFBC;
+    --font: Helvetica Neue;
+}
+
+.jobs{
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    top: 20%;
+}
+
+.jobs .header{
+    font: normal bold 22px/27px Helvetica Neue;
+    margin-bottom: 20px;
+    color: var(--secondaryLight);
+}
+
+.jobs .alljobs{
+    display: flex;
+    flex-wrap: wrap;
+}

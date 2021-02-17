@@ -1,9 +1,22 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import './styles/landing.css';
 import assets from '../../assets/assets';
 import msgs from '../../assets/msg';
+import {useHistory} from 'react-router-dom';
 
 const Landing = () => {
+    const ls = JSON.parse( localStorage.getItem("data"));
+    let history = useHistory();
+
+    useEffect(() => {
+        if(ls && ls[0]?.userRole===1){
+            history.push('/home');
+        }
+        else if(ls && ls[0]?.userRole===0){
+            history.push('/home-recruiter');
+        }
+        else history.push('/');
+    }, [])
 
     const Achieve = ({title,desc}) => {
         return( 

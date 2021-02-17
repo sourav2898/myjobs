@@ -1,0 +1,37 @@
+:root {
+    --primaryLight: #43AFFF;
+    --primaryDark: #303F60;
+    --secondaryLight: #EDF6FF;
+    --secondaryDark:#D9EFFF;
+    --gray: #A9AFBC;
+    --font: Helvetica Neue;
+}
+
+.empty_applied{
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.empty_applied .ins{
+    text-align: center;
+    font: normal medium 20px/24px Helvetica Neue;
+    text-align: center;
+    color: var(--gray);
+    margin-bottom: 20px;
+}
+
+.empty_applied .all_jobs{
+    background: var(--primaryLight);
+    border: 2px solid var(--primaryLight);
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #fff;
+    font: normal medium 16px/19px Helvetica Neue;
+    cursor: pointer;
+    text-align: center;
+    outline: none;
+}
+
