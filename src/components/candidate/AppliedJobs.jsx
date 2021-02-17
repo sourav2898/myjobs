@@ -2,12 +2,9 @@ import React,{useEffect, useState} from 'react'
 import {baseUrl} from '../../conf';
 import Axios from 'axios';
 import Jobs from './Jobs';
-import {useHistory} from 'react-router-dom';
-import EmptyAppliedJobs from '../common/EmptyAppliedJobs';
 
 const AppliedJobs = () => {
 
-    let history = useHistory();
     const [appliedJobs, setAppliedJobs] = useState({});
     const ls = JSON.parse( localStorage.getItem("data"));
 
@@ -26,16 +23,7 @@ const AppliedJobs = () => {
     }
 
     useEffect(() => {
-        // console.log(localStorage);
-        if(localStorage.length>0){
-            // console.log(localStorage);
-            getAppliedJobs();
-            // console.log(data);
-        }
-        else{
-            history.push(`/`);
-        }
-        // console.log(jobs);
+        getAppliedJobs();
     }, [])
 
     return (

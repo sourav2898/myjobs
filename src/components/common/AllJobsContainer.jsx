@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React from 'react'
 import './styles/alljobs.css'
 import Axios from 'axios';
 import {baseUrl} from '../../conf';
@@ -10,7 +10,7 @@ const AllJobsContainer = ({data,applied}) => {
     const ls = JSON.parse( localStorage.getItem("data"));
     async function apply() {  
         try{
-            const data = await Axios.post(`${baseUrl}/candidates/jobs`,
+            await Axios.post(`${baseUrl}/candidates/jobs`,
             {jobId: id},
             {
                 headers: { 

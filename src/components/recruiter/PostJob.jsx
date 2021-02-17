@@ -1,7 +1,6 @@
 import React from 'react'
 import {useFormik} from 'formik';
-import conf,{baseUrl} from '../../conf';
-import { useHistory } from "react-router-dom";
+import {baseUrl} from '../../conf';
 import Axios from 'axios';
 import * as Yup from "yup";
 import './styles/postJob.css';
@@ -34,7 +33,7 @@ const PostJob = () => {
         validationSchema: postJobValidation,
         onSubmit:async () => {
             try{
-                const res = await Axios.post(`${baseUrl}/jobs/`,values,
+                await Axios.post(`${baseUrl}/jobs/`,values,
                  {
                      headers: { 
                          'Authorization' : ls[0]?.token 

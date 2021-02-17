@@ -45,7 +45,7 @@ const SignUp = () => {
         validationSchema: signUpValidation,
         onSubmit: async () => {
             try{
-                const res = await Axios.post(`${baseUrl}/auth/register`,values,
+                await Axios.post(`${baseUrl}/auth/register`,values,
                 {
                     headers: { 
                         'Content-Type' : 'application/json' 
@@ -78,25 +78,25 @@ const SignUp = () => {
                         {
                             userRole === 0
                             ? 
-                            <a className='opts' style={{background:"#43AFFF",border:"1px solid #43AFFF"}} onClick={() => {setUserRole(0);values.userRole=0}}>
+                            <span className='opts' style={{background:"#43AFFF",border:"1px solid #43AFFF"}} onClick={() => {setUserRole(0);values.userRole=0}}>
                                 Recruiter
-                            </a>
+                            </span>
                             :
-                            <a className='opts' onClick={() => {setUserRole(0);values.userRole=0}}>
+                            <span className='opts' onClick={() => {setUserRole(0);values.userRole=0}}>
                                 Recruiter
-                            </a>
+                            </span>
                         }
                             
                         {
                             userRole === 1
                             ?
-                            <a className="opts" style={{background:"#43AFFF",border:"1px solid #43AFFF"}} onClick={() => {setUserRole(1);values.userRole=1}}>
+                            <span className="opts" style={{background:"#43AFFF",border:"1px solid #43AFFF"}} onClick={() => {setUserRole(1);values.userRole=1}}>
                                 Candidate
-                            </a>   
+                            </span>   
                             :
-                            <a className="opts" onClick={() => {setUserRole(1);values.userRole=1}}>
+                            <span className="opts" onClick={() => {setUserRole(1);values.userRole=1}}>
                                 Candidate
-                            </a>
+                            </span>
                         }
                         </div>
                     </div>

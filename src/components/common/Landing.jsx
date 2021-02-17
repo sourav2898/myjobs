@@ -1,6 +1,5 @@
 import React,{useEffect} from 'react'
 import './styles/landing.css';
-import assets from '../../assets/assets';
 import desk from "../../static/img/desk.jpg";
 import msgs from '../../assets/msg';
 import {useHistory} from 'react-router-dom';
@@ -17,7 +16,7 @@ const Landing = () => {
             history.push('/home-recruiter');
         }
         else history.push('/');
-    }, [])
+    },[])
 
     const Achieve = ({title,desc}) => {
         return( 
