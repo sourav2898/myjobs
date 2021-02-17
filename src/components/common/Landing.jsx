@@ -1,6 +1,7 @@
 import React,{useEffect} from 'react'
 import './styles/landing.css';
 import assets from '../../assets/assets';
+import desk from "../../static/img/desk.jpg";
 import msgs from '../../assets/msg';
 import {useHistory} from 'react-router-dom';
 
@@ -36,7 +37,7 @@ const Landing = () => {
                     <a href='/login' className="action"> Get Started </a>
                 </div>
                 <div className="image">
-                    <img width="622px" height="395px" scr={assets.landing} alt="landing asset" />
+                    <img width="590px" height="350px" src={desk} alt="landing asset" />
                 </div>
             </div>
             </div>
